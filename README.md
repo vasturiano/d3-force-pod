@@ -36,7 +36,7 @@ d3ForcePod()
 | <b>genNodes</b>([<i>object</i>]) | Convenience method to randomly generate nodes. See below for input options and defaults. ||
 | <b>addForce</b>([<i>fn</i>]) | Method to register a D3 force in the system. ||
 
-### genNodes(<options>) defaults:
+### genNodes(<i>options</i>) defaults:
 
 ```
 {
