@@ -4,7 +4,7 @@
 
 Component that runs a D3 force simulation and automatically draws circles/lines to an SVG canvas according to a configurable set of nodes, links and forces.
 
-Nodes are prevented from escaping by hard-limiting the coordinates to the dimensions of the canvas.
+Nodes are prevented from escaping by hard-limiting the coordinates to the boundaries of the canvas.
 
 ## Quick start
 
