@@ -48,6 +48,12 @@ export default Kapsule({
         }
     },
 
+    stateInit: {
+        forceSim: d3.forceSimulation()
+            .alphaDecay(0)
+            .velocityDecay(0)
+    },
+
     init(domElem, state) {
         const svg = d3.select(domElem).append('svg')
             .attr('width', window.innerWidth)
@@ -56,9 +62,7 @@ export default Kapsule({
         const elLines = svg.append('g');
         const elParticles = svg.append('g');
 
-        state.forceSim = d3.forceSimulation()
-            .alphaDecay(0)
-            .velocityDecay(0)
+        state.forceSim
             .nodes(state.nodes)
             .on('tick', () => {
                 // Draw particles
