@@ -31,20 +31,22 @@ d3ForcePod()
 
 | Method | Description | Default |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| <b>width</b>([<i>number</i>]) | Getter/setter for the canvas width. | window.innerWidth |
+| <b>height</b>([<i>number</i>]) | Getter/setter for the canvas height. | window.innerHeight |
 | <b>nodes</b>([<i>array</i>]) | Getter/setter for the list of nodes. Each node should be an object with the following optional properties: `{ x, y, vx, vy, r }`. | [] |
 | <b>links</b>([<i>array</i>]) | Getter/setter for the list of lines to draw between node pairs. Each link should follow the syntax: `[<node index>, <node index>]`. | [] |
-| <b>genNodes</b>([<i>object</i>]) | Convenience method to randomly generate nodes. See below for input options and defaults. ||
+| <b>genNodes</b>([<i>object</i>]) | Convenience method for randomly generating nodes. See below for input options and defaults. ||
 | <b>addForce</b>([<i>fn</i>]) | Method to register a D3 force in the system. ||
 
-### genNodes(<i>options</i>) defaults:
+#### genNodes(<i>options</i>) defaults:
 
 ```
 {
-    density: 0.00025,                   // nodes/px
-    xRange: [0, window.innerWidth],     // px
-    yRange: [0, window.innerHeight],    // px
-    radiusRange: [1, 18],               // px
-    velocityRange: [0, 4],              // px/tick
-    velocityAngleRange: [0, 360]        // 0=right, 90=down
+    density: 0.00025,             // nodes/px
+    xRange: [0, width],           // px
+    yRange: [0, height],          // px
+    radiusRange: [1, 18],         // px
+    velocityRange: [0, 4],        // px/tick
+    velocityAngleRange: [0, 360]  // 0=right, 90=down
 }
 ```
