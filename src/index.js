@@ -6,7 +6,9 @@ export default Kapsule({
         width: { default: window.innerWidth },
         height: { default: window.innerHeight },
         nodes: { default: [] },
-        links: { default: [] }
+        links: { default: [] },
+        alphaDecay: { default: 0 },
+        velocityDecay: { default: 0 }
     },
 
     methods: {
@@ -47,8 +49,6 @@ export default Kapsule({
 
     stateInit: {
         forceSim: d3.forceSimulation()
-            .alphaDecay(0)
-            .velocityDecay(0)
     },
 
     init(domElem, state) {
@@ -58,7 +58,7 @@ export default Kapsule({
         const elParticles = state.svg.append('g');
 
         state.forceSim
-            .nodes(state.nodes)
+            .nodes([])
             .on('tick', () => {
                 // Draw particles
                 let particle = elParticles.selectAll('circle')
@@ -107,6 +107,9 @@ export default Kapsule({
             .attr('width', state.width)
             .attr('height', state.height);
 
-        state.forceSim.nodes(state.nodes);
+        state.forceSim
+            .alphaDecay(state.alphaDecay)
+            .velocityDecay(state.velocityDecay)
+            .nodes(state.nodes);
     }
 });
