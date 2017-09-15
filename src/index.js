@@ -6,9 +6,9 @@ export default Kapsule({
         width: { default: window.innerWidth },
         height: { default: window.innerHeight },
         nodes: { default: [] },
-        links: { default: [] },
-        alphaDecay: { default: 0 },
-        velocityDecay: { default: 0 }
+        links: { default: [], triggerUpdate: false },
+        nodeColor: { default: '#900C3F', triggerUpdate: false },
+        linkColor: { default: '#00008B', triggerUpdate: false }
     },
 
     methods: {
@@ -44,11 +44,17 @@ export default Kapsule({
         addForce: function(state, forceFunc) {
             state.forceSim.force(Math.random(), forceFunc);
             return this;
+        },
+        simulation: function(state) {
+            return state.forceSim;
         }
     },
 
     stateInit: {
         forceSim: d3.forceSimulation()
+            .alphaDecay(0)
+            .velocityDecay(0)
+            .nodes([])
     },
 
     init(domElem, state) {
@@ -58,7 +64,6 @@ export default Kapsule({
         const elParticles = state.svg.append('g');
 
         state.forceSim
-            .nodes([])
             .on('tick', () => {
                 // Draw particles
                 let particle = elParticles.selectAll('circle')
@@ -69,8 +74,8 @@ export default Kapsule({
                 particle.merge(
                     particle.enter().append('circle')
                         .attr('r', d => d.r || 4)
-                        .attr('fill', '#900C3F')
                 )
+                    .attr('fill', state.nodeColor)
                     .attr('cx', d => d.x)
                     .attr('cy', d => d.y);
 
@@ -82,10 +87,10 @@ export default Kapsule({
 
                 line.merge(
                     line.enter().append('line')
-                        .attr('stroke', 'darkblue')
                         .attr('stroke-width', '1.5px')
                         .attr('stroke-opacity', .4)
                 )
+                    .attr('stroke', state.linkColor)
                     .attr('x1', d => d[0].x)
                     .attr('y1', d => d[0].y)
                     .attr('x2', d => d[1].x)
@@ -108,8 +113,6 @@ export default Kapsule({
             .attr('height', state.height);
 
         state.forceSim
-            .alphaDecay(state.alphaDecay)
-            .velocityDecay(state.velocityDecay)
             .nodes(state.nodes);
     }
 });

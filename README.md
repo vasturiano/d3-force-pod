@@ -36,7 +36,10 @@ d3ForcePod()
 | <b>nodes</b>([<i>array</i>]) | Getter/setter for the list of nodes. Each node should be an object with the following optional properties: `{ x, y, vx, vy, r }`. | [] |
 | <b>links</b>([<i>array</i>]) | Getter/setter for the list of lines to draw between node pairs. Each link should follow the syntax: `[<node index>, <node index>]`. | [] |
 | <b>genNodes</b>([<i>object</i>]) | Convenience method for randomly generating nodes. See below for input options and defaults. ||
-| <b>addForce</b>([<i>fn</i>]) | Method to register a D3 force in the system. ||
+| <b>addForce</b>(<i>fn</i>) | Method to register a D3 force in the system. ||
+| <b>simulation</b>() | Getter for the underlying simulation object. Can be used as an escape hatch to modify simulation parameters such as alphaDecay. | d3.forceSimulation().alphaDecay(0).velocityDecay(0) |
+| <b>nodeColor</b>([<i>string</i> or <i>fn</i>]) | Getter/setter for the color accessor of the node circles | #900C3F |
+| <b>linkColor</b>([<i>string</i> or <i>fn</i>]) | Getter/setter for the color accessor of the link lines | #00008B |
 
 #### genNodes(<i>options</i>) defaults:
 
