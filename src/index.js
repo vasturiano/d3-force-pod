@@ -1,6 +1,8 @@
 import * as d3 from 'd3';
 import Kapsule from 'kapsule';
 
+const DEFAULT_R = 4;
+
 export default Kapsule({
     props: {
         width: { default: window.innerWidth },
@@ -73,7 +75,7 @@ export default Kapsule({
 
                 particle.merge(
                     particle.enter().append('circle')
-                        .attr('r', d => d.r || 4)
+                        .attr('r', d => d.r || DEFAULT_R)
                 )
                     .attr('fill', state.nodeColor)
                     .attr('cx', d => d.x)
@@ -100,11 +102,15 @@ export default Kapsule({
         //
 
         function hardLimit(node) {
+            const r = node.r || DEFAULT_R,
+                x = node.x || 0,
+                y = node.y || 0;
+
             // Keep in canvas
-            if (node.x<node.r || node.x>state.width-node.r) { node.vx = 0; }
-            if (node.y<node.r || node.y>state.height-node.r) { node.vy = 0; }
-            node.x = Math.max(node.r, Math.min(state.width-node.r, node.x));
-            node.y = Math.max(node.r, Math.min(state.height-node.r, node.y));
+            if (x<r || x>state.width-r) { node.vx = 0; }
+            if (y<r || y>state.height-r) { node.vy = 0; }
+            node.x = Math.max(r, Math.min(state.width-r, x));
+            node.y = Math.max(r, Math.min(state.height-r, y));
             return node;
         }
     },
