@@ -101,6 +101,8 @@ export default Kapsule({
 
         function hardLimit(node) {
             // Keep in canvas
+            if (node.x<node.r || node.x>state.width-node.r) { node.vx = 0; }
+            if (node.y<node.r || node.y>state.height-node.r) { node.vy = 0; }
             node.x = Math.max(node.r, Math.min(state.width-node.r, node.x));
             node.y = Math.max(node.r, Math.min(state.height-node.r, node.y));
             return node;
