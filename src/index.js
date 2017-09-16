@@ -83,7 +83,10 @@ export default Kapsule({
 
                 // Draw lines
                 let line = elLines.selectAll('line')
-                    .data(state.links.map(l => l.map(nIdx => state.nodes[nIdx])));
+                    .data(state.links
+                        .map(l => [l.source, l.target])
+                        .map(l => l.map(nIdx => state.nodes[nIdx]))
+                    );
 
                 line.exit().remove();
 

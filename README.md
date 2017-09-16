@@ -34,7 +34,7 @@ d3ForcePod()
 | <b>width</b>([<i>number</i>]) | Getter/setter for the canvas width. | window.innerWidth |
 | <b>height</b>([<i>number</i>]) | Getter/setter for the canvas height. | window.innerHeight |
 | <b>nodes</b>([<i>array</i>]) | Getter/setter for the list of nodes. Each node should be an object with the following optional properties: `{ x, y, vx, vy, r }`. | [] |
-| <b>links</b>([<i>array</i>]) | Getter/setter for the list of lines to draw between node pairs. Each link should follow the syntax: `[<node index>, <node index>]`. | [] |
+| <b>links</b>([<i>array</i>]) | Getter/setter for the list of lines to draw between node pairs. Each link should follow the syntax: `{source: <node index>, target: <node index>}`. | [] |
 | <b>genNodes</b>([<i>object</i>]) | Convenience method for randomly generating nodes. See below for input options and defaults. ||
 | <b>addForce</b>(<i>fn</i>) | Method to register a D3 force in the system. ||
 | <b>simulation</b>() | Getter for the underlying simulation object. Can be used as an escape hatch to modify simulation parameters such as alphaDecay. | d3.forceSimulation().alphaDecay(0).velocityDecay(0) |
