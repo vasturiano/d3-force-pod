@@ -85,7 +85,7 @@ export default Kapsule({
                 let line = elLines.selectAll('line')
                     .data(state.links
                         .map(l => [l.source, l.target])
-                        .map(l => l.map(nIdx => state.nodes[nIdx]))
+                        .map(l => l.map(nIdx => isNaN(nIdx) ? nIdx : state.nodes[nIdx]))
                     );
 
                 line.exit().remove();
