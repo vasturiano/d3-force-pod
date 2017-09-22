@@ -1,5 +1,9 @@
-import * as d3 from 'd3';
 import Kapsule from 'kapsule';
+import { forceSimulation } from 'd3-force';
+import { range } from 'd3-array';
+import { select } from 'd3-selection';
+
+const d3 = { forceSimulation, range, select };
 
 const DEFAULT_R = 4;
 
@@ -7,7 +11,13 @@ export default Kapsule({
     props: {
         width: { default: window.innerWidth },
         height: { default: window.innerHeight },
-        nodes: { default: [] },
+        nodes: {
+            default: [],
+            triggerUpdate: false,
+            onChange(nodes, state) {
+                state.forceSim.nodes(nodes);
+            }
+        },
         links: { default: [], triggerUpdate: false },
         nodeColor: { default: '#900C3F', triggerUpdate: false },
         linkColor: { default: '#00008B', triggerUpdate: false }
@@ -67,9 +77,11 @@ export default Kapsule({
 
         state.forceSim
             .on('tick', () => {
+                const nodes = state.forceSim.nodes();
+
                 // Draw particles
                 let particle = elParticles.selectAll('circle')
-                    .data(state.forceSim.nodes().map(hardLimit));
+                    .data(nodes.map(hardLimit));
 
                 particle.exit().remove();
 
@@ -85,7 +97,7 @@ export default Kapsule({
                 let line = elLines.selectAll('line')
                     .data(state.links
                         .map(l => [l.source, l.target])
-                        .map(l => l.map(nIdx => isNaN(nIdx) ? nIdx : state.nodes[nIdx]))
+                        .map(l => l.map(nIdx => isNaN(nIdx) ? nIdx : nodes[nIdx]))
                     );
 
                 line.exit().remove();
@@ -122,8 +134,5 @@ export default Kapsule({
         state.svg
             .attr('width', state.width)
             .attr('height', state.height);
-
-        state.forceSim
-            .nodes(state.nodes);
     }
 });
