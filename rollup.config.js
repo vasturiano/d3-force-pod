@@ -3,15 +3,21 @@ import commonJs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 
 export default {
-    entry: 'src/index.js',
-    dest: 'dist/d3-force-pod.js',
-    format: 'umd',
-    moduleName: 'd3ForcePod',
+    input: 'src/index.js',
+    output: [
+        {
+            format: 'umd',
+            name: 'd3ForcePod',
+            file: 'dist/d3-force-pod.js',
+            sourcemap: true
+        },
+        {
+            format: 'es',
+            file: 'dist/d3-force-pod.mjs'
+        }
+    ],
     plugins: [
-        nodeResolve({
-            jsnext: true,
-            main: true
-        }),
+        nodeResolve(),
         commonJs(),
         babel({
             presets: [
