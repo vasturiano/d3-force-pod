@@ -2,9 +2,8 @@
   "name": "d3-force-pod",
   "version": "0.9.0",
   "description": "Component to automatically draw nodes/links in a D3 force simulation according to a set of forces",
-  "main": "dist/d3-force-pod.js",
+  "main": "dist/d3-force-pod.min.js",
   "module": "src/index",
-  "jsnext:main": "src/index",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vasturiano/d3-force-pod.git"
