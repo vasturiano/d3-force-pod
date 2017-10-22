@@ -1,6 +1,7 @@
-import nodeResolve from 'rollup-plugin-node-resolve';
+import resolve from 'rollup-plugin-node-resolve';
 import commonJs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
+import { name, homepage, version } from './package.json';
 
 export default {
     input: 'src/index.js',
@@ -8,23 +9,14 @@ export default {
         {
             format: 'umd',
             name: 'd3ForcePod',
-            file: 'dist/d3-force-pod.js',
+            file: `dist/${name}.js`,
             sourcemap: true
-        },
-        {
-            format: 'es',
-            file: 'dist/d3-force-pod.mjs'
         }
     ],
     plugins: [
-        nodeResolve(),
+        resolve(),
         commonJs(),
-        babel({
-            presets: [
-                ["es2015", { "modules": false }]
-            ],
-            plugins: ["external-helpers"],
-            babelrc: false
-        })
-    ]
+        babel({ exclude: 'node_modules/**' })
+    ],
+    banner: `// Version ${version} ${name} - ${homepage}`
 };
