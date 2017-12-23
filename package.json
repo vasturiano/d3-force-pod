@@ -4,7 +4,7 @@
   "description": "Component to automatically draw nodes/links in a D3 force simulation according to a set of forces",
   "unpkg": "dist/d3-force-pod.min.js",
   "main": "dist/d3-force-pod.common.js",
-  "module": "dist/d3-force-pod.mjs",
+  "module": "dist/d3-force-pod.module.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vasturiano/d3-force-pod.git"
