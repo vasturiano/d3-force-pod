@@ -4,19 +4,19 @@ import babel from 'rollup-plugin-babel';
 import { name, homepage, version } from './package.json';
 
 export default {
-    input: 'src/index.js',
-    output: [
-        {
-            format: 'umd',
-            name: 'd3ForcePod',
-            file: `dist/${name}.js`,
-            sourcemap: true
-        }
-    ],
-    plugins: [
-        resolve(),
-        commonJs(),
-        babel({ exclude: 'node_modules/**' })
-    ],
-    banner: `// Version ${version} ${name} - ${homepage}`
+  input: 'src/index.js',
+  output: [
+    {
+      format: 'umd',
+      name: 'd3ForcePod',
+      file: `dist/${name}.js`,
+      sourcemap: true,
+      banner: `// Version ${version} ${name} - ${homepage}`
+    }
+  ],
+  plugins: [
+    resolve(),
+    commonJs(),
+    babel({ exclude: 'node_modules/**' })
+  ]
 };
