@@ -1,6 +1,9 @@
-# d3-force-pod
+d3-force-pod
+==============
 
-[![NPM](https://nodei.co/npm/d3-force-pod.png?compact=true)](https://nodei.co/npm/d3-force-pod/)
+[![NPM package][npm-img]][npm-url]
+[![Build Size][build-size-img]][build-size-url]
+[![Dependencies][dependencies-img]][dependencies-url]
 
 Component that runs a D3 force simulation and automatically draws circles/lines to an SVG canvas according to a configurable set of nodes, links and forces.
 
@@ -53,3 +56,11 @@ d3ForcePod()
     velocityAngleRange: [0, 360]  // 0=right, 90=down
 }
 ```
+
+
+[npm-img]: https://img.shields.io/npm/v/d3-force-pod.svg
+[npm-url]: https://npmjs.org/package/d3-force-pod
+[build-size-img]: https://img.shields.io/bundlephobia/minzip/d3-force-pod.svg
+[build-size-url]: https://bundlephobia.com/result?p=d3-force-pod
+[dependencies-img]: https://img.shields.io/david/vasturiano/d3-force-pod.svg
+[dependencies-url]: https://david-dm.org/vasturiano/d3-force-pod
