@@ -1,27 +1,27 @@
 <head>
-    <script src="//unpkg.com/d3-force-pod"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.10.2/d3.min.js"></script>
-    <script src="//unpkg.com/d3-force-bounce"></script>
+  <style> body { margin: 0 } </style>
 
-    <style>
-        body { margin: 0 }
-    </style>
+  <script src="//unpkg.com/d3@5"></script>
+  <script src="//unpkg.com/d3-force-bounce"></script>
+
+  <script src="//unpkg.com/d3-force-pod"></script>
+  <!--<script src="../../dist/d3-force-pod.js"></script>-->
 </head>
 
 <body>
 <script>
-    const simulationPod = d3ForcePod()(document.body);
+  const simulationPod = d3ForcePod()(document.body);
 
-    simulationPod.genNodes({
-        density: 0.00025,               // nodes/px
-        radiusRange: [1, 8],            // px
-        yRange: [0, 0],                 // px
-        velocityRange: [0, 1],          // px/tick
-        velocityAngleRange: [90, 90]    // 0=right, 90=down
-    });
+  simulationPod.genNodes({
+    density: 0.00025,               // nodes/px
+    radiusRange: [1, 8],            // px
+    yRange: [0, 0],                 // px
+    velocityRange: [0, 1],          // px/tick
+    velocityAngleRange: [90, 90]    // 0=right, 90=down
+  });
 
-    simulationPod
-        .addForce(d3.forceBounce().radius(d => d.r))                    // bounce
-        .addForce(d3.forceX().x(window.innerWidth/2).strength(0.002));  // vertical
+  simulationPod
+    .addForce(d3.forceBounce().radius(d => d.r))                    // bounce
+    .addForce(d3.forceX().x(window.innerWidth/2).strength(0.002));  // vertical
 </script>
 </body>
