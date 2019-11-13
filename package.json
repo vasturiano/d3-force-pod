@@ -1,6 +1,6 @@
 {
   "name": "d3-force-pod",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "Component to automatically draw nodes/links in a D3 force simulation according to a set of forces",
   "unpkg": "dist/d3-force-pod.min.js",
   "main": "dist/d3-force-pod.common.js",
