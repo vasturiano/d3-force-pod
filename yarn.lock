@@ -872,6 +872,11 @@ d3-dispatch@1:
   resolved "https://registry.yarnpkg.com/d3-dispatch/-/d3-dispatch-1.0.6.tgz#00d37bcee4dd8cd97729dd893a0ac29caaba5d58"
   integrity sha512-fVjoElzjhCEy+Hbn8KygnmMS7Or0a9sI2UzGwoB7cCtvI1XpVN9GpoYlnb3xt2YV66oXYb1fLJ8GMvP4hdU1RA==
 
+d3-force-limit@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/d3-force-limit/-/d3-force-limit-0.1.2.tgz#58913aef21d54d90bd7930e0d83016168903df2e"
+  integrity sha512-V8RDugb4y0n2TkPq8yRFgTU8MdyNCNBB2TJhOeC6QG8+8aAjMgShw/sOWg1ojbK02OxIAhJ7e+FRHyiTBJdGnA==
+
 d3-force@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/d3-force/-/d3-force-2.0.1.tgz#31750eee8c43535301d571195bf9683beda534e2"

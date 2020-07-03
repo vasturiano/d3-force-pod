@@ -2,6 +2,7 @@ import Kapsule from 'kapsule';
 import { forceSimulation } from 'd3-force';
 import { range } from 'd3-array';
 import { select } from 'd3-selection';
+import forceLimit from 'd3-force-limit';
 
 const d3 = { forceSimulation, range, select };
 
@@ -55,6 +56,12 @@ export default Kapsule({
     },
     addForce: function(state, forceFunc) {
       state.forceSim.force(Math.random(), forceFunc);
+
+      // keep walls force as last
+      const wallsForce = state.forceSim.force('walls');
+      state.forceSim.force('walls', null);
+      state.forceSim.force('walls', wallsForce);
+
       return this;
     },
     simulation: function(state) {
@@ -81,7 +88,7 @@ export default Kapsule({
 
         // Draw particles
         let particle = elParticles.selectAll('circle')
-          .data(nodes.map(hardLimit));
+          .data(nodes);
 
         particle.exit().remove();
 
@@ -112,22 +119,15 @@ export default Kapsule({
           .attr('y1', d => d[0].y)
           .attr('x2', d => d[1].x)
           .attr('y2', d => d[1].y);
-      });
-
-    //
-
-    function hardLimit(node) {
-      const r = node.r || DEFAULT_R,
-        x = node.x || 0,
-        y = node.y || 0;
-
-      // Keep in canvas
-      if (x<r || x>state.width-r) { node.vx = 0; }
-      if (y<r || y>state.height-r) { node.vy = 0; }
-      node.x = Math.max(r, Math.min(state.width-r, x));
-      node.y = Math.max(r, Math.min(state.height-r, y));
-      return node;
-    }
+      })
+      // limit nodes inside container
+      .force('walls', forceLimit()
+        .radius(node => node.r || DEFAULT_R)
+        .x0(0)
+        .x1(() => state.width)
+        .y0(0)
+        .y1(() => state.height)
+      );
   },
 
   update(state) {
