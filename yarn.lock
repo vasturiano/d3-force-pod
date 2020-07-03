@@ -959,10 +959,10 @@ d3-dispatch@1:
   resolved "https://registry.yarnpkg.com/d3-dispatch/-/d3-dispatch-1.0.6.tgz#00d37bcee4dd8cd97729dd893a0ac29caaba5d58"
   integrity sha512-fVjoElzjhCEy+Hbn8KygnmMS7Or0a9sI2UzGwoB7cCtvI1XpVN9GpoYlnb3xt2YV66oXYb1fLJ8GMvP4hdU1RA==
 
-d3-force-limit@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/d3-force-limit/-/d3-force-limit-0.1.2.tgz#58913aef21d54d90bd7930e0d83016168903df2e"
-  integrity sha512-V8RDugb4y0n2TkPq8yRFgTU8MdyNCNBB2TJhOeC6QG8+8aAjMgShw/sOWg1ojbK02OxIAhJ7e+FRHyiTBJdGnA==
+d3-force-limit@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/d3-force-limit/-/d3-force-limit-1.0.1.tgz#07d6fdf716b597fd7a7b4d1e5f19f977f1cb116b"
+  integrity sha512-TMnztXDuI7pIAhZXk9FENymCLVYkwZg2ZboNFepLtO18kgu/LiZ95tNLfyY+S1SKMm/yXVLpi/3iF9S22zxphA==
 
 d3-force@^2.0.1:
   version "2.0.1"
@@ -1018,9 +1018,9 @@ define-properties@^1.1.2:
     object-keys "^1.0.12"
 
 electron-to-chromium@^1.3.483:
-  version "1.3.485"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.485.tgz#ee67ba44fbe0dddc9dd439af532e593f6c8baaa6"
-  integrity sha512-Qclz/MFjp6H1oMd1U1AWCWqT8DW/SaN7lUb6ejh03bD6lBoN2X8W2xhXfsU4rdjf7TWReb0ZOGxo6MjsFiEgzQ==
+  version "1.3.486"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.486.tgz#90856e6c9f488079225cf5a0b4d4af6c241e0965"
+  integrity sha512-fmnACh6Jiuagm9tAfEZNe6QrwvOYAC5y0BwzoEOGCsbqriKOCaafXf3lsIvL55xa75Jmg4oboI7f5tMuoXrjNg==
 
 escalade@^3.0.1:
   version "3.0.1"
