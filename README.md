@@ -16,7 +16,7 @@ import d3ForcePod from 'd3-force-pod';
 ```
 or
 ```js
-d3ForcePod = require('d3-force-pod');
+const d3ForcePod = require('d3-force-pod');
 ```
 or even
 ```html
