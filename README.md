@@ -3,7 +3,7 @@ d3-force-pod
 
 [![NPM package][npm-img]][npm-url]
 [![Build Size][build-size-img]][build-size-url]
-[![Dependencies][dependencies-img]][dependencies-url]
+[![NPM Downloads][npm-downloads-img]][npm-downloads-url]
 
 Component that runs a D3 force simulation and automatically draws circles/lines to an SVG canvas according to a configurable set of nodes, links and forces.
 
@@ -11,19 +11,19 @@ Nodes are prevented from escaping by hard-limiting the coordinates to the bounda
 
 ## Quick start
 
-```
+```js
 import d3ForcePod from 'd3-force-pod';
 ```
 or
-```
+```js
 d3ForcePod = require('d3-force-pod');
 ```
 or even
-```
+```html
 <script src="//unpkg.com/d3-force-pod/dist/d3-force-pod.min.js"></script>
 ```
 then
-```
+```js
 d3ForcePod()
     .genNodes()
     .addForce(d3.forceManyBody())
@@ -46,7 +46,7 @@ d3ForcePod()
 
 #### genNodes(<i>options</i>) defaults:
 
-```
+```js
 {
     density: 0.00025,             // nodes/px
     xRange: [0, width],           // px
@@ -58,9 +58,9 @@ d3ForcePod()
 ```
 
 
-[npm-img]: https://img.shields.io/npm/v/d3-force-pod.svg
+[npm-img]: https://img.shields.io/npm/v/d3-force-pod
 [npm-url]: https://npmjs.org/package/d3-force-pod
-[build-size-img]: https://img.shields.io/bundlephobia/minzip/d3-force-pod.svg
+[build-size-img]: https://img.shields.io/bundlephobia/minzip/d3-force-pod
 [build-size-url]: https://bundlephobia.com/result?p=d3-force-pod
-[dependencies-img]: https://img.shields.io/david/vasturiano/d3-force-pod.svg
-[dependencies-url]: https://david-dm.org/vasturiano/d3-force-pod
+[npm-downloads-img]: https://img.shields.io/npm/dt/d3-force-pod
+[npm-downloads-url]: https://www.npmtrends.com/d3-force-pod
