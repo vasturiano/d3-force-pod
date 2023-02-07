@@ -14,11 +14,7 @@ Nodes are prevented from escaping by hard-limiting the coordinates to the bounda
 ```js
 import d3ForcePod from 'd3-force-pod';
 ```
-or
-```js
-const d3ForcePod = require('d3-force-pod');
-```
-or even
+or using a *script* tag
 ```html
 <script src="//unpkg.com/d3-force-pod/dist/d3-force-pod.min.js"></script>
 ```
