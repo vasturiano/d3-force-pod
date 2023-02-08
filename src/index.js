@@ -77,6 +77,9 @@ export default Kapsule({
   },
 
   init(domElem, state) {
+    // Wipe DOM
+    domElem.innerHTML = '';
+
     state.svg = d3.select(domElem).append('svg');
 
     const elLines = state.svg.append('g');
