@@ -80,7 +80,8 @@ export default Kapsule({
     // Wipe DOM
     domElem.innerHTML = '';
 
-    state.svg = d3.select(domElem).append('svg');
+    state.svg = d3.select(domElem).append('svg')
+      .style('display', 'block');
 
     const elLines = state.svg.append('g');
     const elParticles = state.svg.append('g');
