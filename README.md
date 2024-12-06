@@ -20,10 +20,9 @@ or using a *script* tag
 ```
 then
 ```js
-d3ForcePod()
+new d3ForcePod(<myDOMElement>)
     .genNodes()
-    .addForce(d3.forceManyBody())
-    (<myDOMElement>);
+    .addForce(d3.forceManyBody());
 ```
 
 ## API reference

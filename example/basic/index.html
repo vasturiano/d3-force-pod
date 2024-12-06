@@ -8,9 +8,8 @@
 
 <body>
 <script>
-  d3ForcePod()
+  new d3ForcePod(document.body)
     .genNodes()
-    .addForce(d3.forceCollide(d => d.r))
-    (document.body);
+    .addForce(d3.forceCollide(d => d.r));
 </script>
 </body>

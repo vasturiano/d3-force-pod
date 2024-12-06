@@ -10,7 +10,7 @@
 
 <body>
 <script>
-  const simulationPod = d3ForcePod()(document.body);
+  const simulationPod = new d3ForcePod(document.body);
 
   simulationPod.genNodes({
     density: 0.00025,               // nodes/px
