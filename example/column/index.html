@@ -1,15 +1,15 @@
 <head>
   <style> body { margin: 0 } </style>
 
-  <script src="//unpkg.com/d3@7"></script>
-  <script src="//unpkg.com/d3-force-bounce"></script>
-
   <script src="//unpkg.com/d3-force-pod"></script>
   <!--<script src="../../dist/d3-force-pod.js"></script>-->
 </head>
 
 <body>
-<script>
+<script type="module">
+  import { forceX } from 'https://esm.sh/d3-force';
+  import forceBounce from 'https://esm.sh/d3-force-bounce';
+
   const simulationPod = new d3ForcePod(document.body);
 
   simulationPod.genNodes({
@@ -21,7 +21,7 @@
   });
 
   simulationPod
-    .addForce(d3.forceBounce().radius(d => d.r))                    // bounce
-    .addForce(d3.forceX().x(window.innerWidth/2).strength(0.002));  // vertical
+    .addForce(forceBounce().radius(d => d.r))                    // bounce
+    .addForce(forceX().x(window.innerWidth/2).strength(0.002));  // vertical
 </script>
 </body>

@@ -1,15 +1,16 @@
 <head>
   <style> body { margin: 0 } </style>
 
-  <script src="//unpkg.com/d3@7"></script>
   <script src="//unpkg.com/d3-force-pod"></script>
   <!--<script src="../../dist/d3-force-pod.js"></script>-->
 </head>
 
 <body>
-<script>
+<script type="module">
+  import { forceCollide } from 'https://esm.sh/d3-force';
+
   new d3ForcePod(document.body)
     .genNodes()
-    .addForce(d3.forceCollide(d => d.r));
+    .addForce(forceCollide(d => d.r));
 </script>
 </body>

@@ -16,13 +16,13 @@ import d3ForcePod from 'd3-force-pod';
 ```
 or using a *script* tag
 ```html
-<script src="//unpkg.com/d3-force-pod/dist/d3-force-pod.min.js"></script>
+<script src="//unpkg.com/d3-force-pod"></script>
 ```
 then
 ```js
 new d3ForcePod(<myDOMElement>)
-    .genNodes()
-    .addForce(d3.forceManyBody());
+  .genNodes()
+  .addForce(d3.forceManyBody());
 ```
 
 ## API reference
