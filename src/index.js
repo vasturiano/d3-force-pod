@@ -98,9 +98,9 @@ export default Kapsule({
 
         particle.merge(
           particle.enter().append('circle')
-            .attr('r', d => d.r || DEFAULT_R)
         )
           .attr('fill', state.nodeColor)
+          .attr('r', d => d.r || DEFAULT_R)
           .attr('cx', d => d.x)
           .attr('cy', d => d.y);
 
