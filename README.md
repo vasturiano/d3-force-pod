@@ -16,7 +16,7 @@ import d3ForcePod from 'd3-force-pod';
 ```
 or using a *script* tag
 ```html
-<script src="//unpkg.com/d3-force-pod"></script>
+<script src="//cdn.jsdelivr.net/npm/d3-force-pod"></script>
 ```
 then
 ```js
